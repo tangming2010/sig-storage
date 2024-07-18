@@ -15,6 +15,12 @@ RUN ARCH=$(uname -m) \
     && tar zxvf kubectl-aliases.tar.gz \
     && rm -rf kubectl-aliases.tar.gz \
     && chmod -R 755 kubectl-aliases \
+    && wget https://kubeoperator.oss-cn-beijing.aliyuncs.com/kubepi/fzf/0.21.0/fzf.tar.gz \
+    && tar zxvf fzf.tar.gz \
+    && rm -rf fzf.tar.gz \
+    && chmod -R 755 fzf \
+    && yes | fzf/install \
+    && ln -s fzf/bin/fzf /usr/local/bin/fzf \
     && cd /tmp/ \
     && wget https://get.helm.sh/helm-v3.15.3-linux-${ARCH}.tar.gz \
     && tar -xvf helm-v3.15.3-linux-${ARCH}.tar.gz \
