@@ -34,4 +34,3 @@ COPY vimrc.local /etc/vim
 USER root
 
 ENTRYPOINT ["tini", "-g", "--"]
-CMD ["kubepi-server","-c", "/etc/kubepi" ,"--server-bind-host","0.0.0.0","--server-bind-port","80"]
